@@ -1,7 +1,7 @@
 # tosu-obs-overlay
 
 给朋友做的 tosu obs overlay。
-目前没有公开计划。
+没有公开计划。
 版本为 rolling。
 
 这个 README 只是 todo list。
