@@ -110,12 +110,15 @@
 - 尽量让观众看得有趣（假设观众无音游经验）
 - 尽量平铺 debug 级别的信息
 - 尽量吸收其他音游的东西
+- **Modular by design, batteries-included by default**
 
 ## 实现
 
 - [x] 普通的内容实现（比如，所有难度种类及其图表）
 - [x] focus session：显式声明难点，让观众知道难在哪里
 - [x] 精确 acc（五位数）：手动计算，避免 mania 的四舍五入 "95.00%" 但还是 A 的情况
+- [x] **电池包含在内。**
+- [ ] **模块化。**
 
 ## 灵感
 
@@ -151,11 +154,12 @@
 
 ## 推测地图模型
 
-Etterna 可以推测谱面类型。没看过它的实现，因为 std 模式更重要一点。
+Etterna 可以推测谱面类型。没看过它的实现，因为 std 模式更重要一点。对现有工具进行猜测：
 
 - [ ] 0. 等待 User tags（<https://osu.ppy.sh/wiki/en/Beatmap/Beatmap_tags>）成为事实标准
-- [ ] 1. 准备训练数据（[Osynicite/osynic_serializer](https://github.com/Osynicite/osynic_serializer) + [Osynicite/osynic_downloader](https://github.com/Osynicite/osynic_downloader), ）
-- [ ] 2. 实时推理服务（`FastAPI`, `AutoModel` + `AutoProcessor`, `Flask`）
+- [ ] 1. 准备训练数据（[Osynicite/osynic_serializer](https://github.com/Osynicite/osynic_serializer) + [Osynicite/osynic_downloader](https://github.com/Osynicite/osynic_downloader), 还有自己弄的 api 获取对应 tags 的 beatmaps）
+- [ ] 2. 训练（<https://github.com/OliBomby/CM3P>）
+- [ ] 2. 推理（`FastAPI`, `AutoModel` + `AutoProcessor`, `Flask`）
 - [ ] 3. 中间件（<https://axios-http.com/>）
 - [ ] 4. 模型部署（`onnxruntime`, Node.js）
 - [ ] 5. 前端（Node.js）
