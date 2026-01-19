@@ -148,3 +148,15 @@
 ### catch
 
 - [ ] 有人在意
+
+## 推测地图模型
+
+Etterna 可以推测谱面类型。没看过它的实现，因为 std 模式更重要一点。
+
+1. [ ] 准备训练数据（[Osynicite/osynic_serializer](https://github.com/Osynicite/osynic_serializer) + [Osynicite/osynic_downloader](https://github.com/Osynicite/osynic_downloader)）
+2. [ ] 实时推理服务（`FastAPI`, `AutoModel` + `AutoProcessor`, `Flask`）
+3. [ ] 中间件（<https://axios-http.com/>）
+4. [ ] 模型部署（`onnxruntime`, Node.js）
+5. [ ] 前端（Node.js）
+6. [ ] 缓存（`Redis`）
+
