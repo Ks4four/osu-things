@@ -1,5 +1,52 @@
 # Skin
 
+## Elements
+
+研究一下怎么设计模块（AKA 轮子），from code 来生成一个 Skin。概念出自 Iosevka。
+
+### 目标
+
+- 小工具集合（DOTADIW）
+- 无 `skin.ini` 魔法
+
+### 模块设计
+
+以下每个元素都是使用单个脚本文件完成的。
+
+简单模块：
+
+- [x] `combos-*` - 不强制等宽
+- [x] `default-*` - 不强制等宽
+- [x] `numbers-*` - 在程序上强制
+- [ ] `scoreentry-*` - 不强制等宽
+
+多功能脚本：
+- hitcircle
+    - Overlay
+        - Border size
+        - Overlay shadow
+            - No shadow
+            - Shadow out
+            - Shadow in/out
+            - Shadow blur
+            - Shadow color
+            - Shadow opacity
+- Slider
+    - Same slider circles than hitcircles
+    - Overlay
+        - Border size
+        - Overlay color
+        - Overlay shadow
+            - No shadow
+            - Shadow out
+            - Shadow in/out
+            - Shadow blur
+            - Shadow color
+            - Shadow opacity
+- `hit-*-*`
+  - [x] 简单形状：胶囊、点、三角形、正方形、圆形、 交叉
+  - 设计力场来设计 glow
+
 ## Judgments
 
 判定实际上是一种确定语义色的活。目前 ppy 在这上面做的功夫就是标准化。我对此有不同看法，并且我想使用 <https://github.com/Ks4four/moe-palettes-ksfour>。
