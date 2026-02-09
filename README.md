@@ -247,3 +247,10 @@ graph TB
 # lazer 哲学
 
 we get what we deserve
+
+## stable 调试
+
+根据 tosu 发现 stable 有奇怪的现象。暂且不向 tosu 仓库提出 issue。
+
+- 无论玩家游玩的是否为转谱，stable 客户端总是有概率将游玩模式切回 standard。
+- 被注入时分数存储的地方改变，会变为负数。未知是否有其他地方存储分数。
