@@ -207,59 +207,17 @@ SM5 可参看：<https://github.com/stepmania/stepmania/blob/d55acb1ba26f1c5b5e3
 Etterna 可以推测谱面类型。没看过它的实现，因为 std 模式更重要一点。对现有工具进行猜测：
 
 - [ ] 0. 等待 User tags（<https://osu.ppy.sh/wiki/en/Beatmap/Beatmap_tags>）成为事实标准
-- [ ] 1. 准备训练数据（[Osynicite/osynic_serializer](https://github.com/Osynicite/osynic_serializer) + [Osynicite/osynic_downloader](https://github.com/Osynicite/osynic_downloader), 还有自己弄的 api 获取对应 tags 的 beatmaps）
-- [ ] 2. 训练（[OliBomby/CM3P](https://github.com/OliBomby/CM3P)）
-- [ ] 3. 推理（`FastAPI`/`AutoModel` + `AutoProcessor`/`Flask`）
-- [ ] 4. 中间件
-- [ ] 5. 模型部署（`onnxruntime`, Node.js）
-- [ ] 6. 前端（Node.js, tosu）
-- [ ] 7. 缓存（`Redis`）
+- 1. 准备训练数据（[Osynicite/osynic_serializer](https://github.com/Osynicite/osynic_serializer) + [Osynicite/osynic_downloader](https://github.com/Osynicite/osynic_downloader), 还有自己弄的 api 获取对应 tags 的 beatmaps）
+- 2. 训练（[OliBomby/CM3P](https://github.com/OliBomby/CM3P)）
+- 3. 推理（`FastAPI`/`AutoModel` + `AutoProcessor`/`Flask`）
+- 4. 中间件
+- 5. 模型部署（`onnxruntime`, Node.js）
+- 6. 前端（Node.js, tosu）
+- 7. 缓存（`Redis`）
 
-粗略的工作流如下。
+目前阶段卡在 0.，因为 **Beatmap** tags 只用在了 **Beatmap sets** 上。我不知道为什么开发者要搞混这两个，我以为 tags 会像 Booru-like 那样。事实上没有。不过我可以跳过这步，但是那样要么就要手动标注，要么就组织标注。但是我并不是一个社区人士，所以我放弃了。
 
-```mermaid
-graph TB
-    subgraph "前端"
-        A[玩家在选歌界面]
-        B[overlay 显示谱面 tags]
-    end
-    
-    subgraph "胶水"
-        C[Node.js/TypeScript]
-        D[Node.js/Express]
-    end
-    
-    subgraph "tagger"
-        E[用 CM3P 输出向量和推理]
-        F[Redis]
-    end
-    
-    subgraph "db"
-        G[ /Songs/\*/*.osu ]
-        H[SQLite/PostgreSQL]
-    end
-    
-    subgraph "外部推理"
-        I[OsynicSerializer + CM3P]
-    end
-    
-    A -->|tosu| C
-    C <-->|getBeatmapOsuFile| D
-    D <-->|WebSocket| B
-    
-    D -->|谱面 .osu| E
-    E -->|tags| D
-    
-    E <-->|查询/存储| F
-    E -->|谱面 .osu| G
-    
-    I -->|批量处理| E
-    I -->|存储 tags| H
-    E <-->|查询/存储| H
-    
-    G -.->|需要时可外部推理| I
-
-```
+我希望有一个下载 Beatmap sets 之后删除其余 beatmap (chart/diff/file) 的功能。目前现有的工具似乎还做不到。
 
 # lazer 哲学
 
