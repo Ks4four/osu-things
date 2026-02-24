@@ -191,6 +191,12 @@ Danbooru 到被拉取训练 ckpt 花费了很多年。但是 ppy 发布 User tag
 
 与此同时，我的一些朋友想打「好玩的 tech」的图，却还是要问人。这种行为对厌倦人类（好吧，或者说社区；「不混圈」）的人并不友好。他们只能去下各种 collections，即使这些 collections 不知为何里面有大跳和死串，而不是 reading，或者 aim control，这对他们的挫败感和心理健康都不好。然后我在想，如果说做一个 tagger，那就直接解决问题了吧。但是 tagger 需要有人 tag，而我又不可能发动社区说大家都来 tag。我只能用投机取巧的方式去弄，毕竟总不能怪社区的 tag 不够吧。所以我们正处在一个既使用了社区力量又被社区讨厌而目标是逃离社区的地带，但是这中间没有任何悖论。一个人被讨厌和他有没有做错事在逻辑上没有关系，就像你去玩一个音乐游戏和社区没有关系一样，只是说社区*倾向于*它们之间有联系。我有时在想，我是否需要训练来做一个 tagger，只是为了达到「我想玩我喜欢的图」的目的，就像为了开心地玩一个音乐游戏，却要和许多不认识的人搞好关系一样。
 
+如果你也有兴趣做 ML 项目，以下的部分没什么大用，因为都是我的个人项目。为避免重复造轮子，你至少需要关注：
+
+- 数据集（2007-10-06 -- 2025-12-31）：<https://huggingface.co/datasets/project-riz/osu-beatmaps>
+- 预训练框架：<https://github.com/OliBomby/CM3P>
+- 生成框架：<https://github.com/OliBomby/Mapperatorinator>
+
 ## CM3P 模型
 
 ![Type](https://img.shields.io/badge/Type-Infrastructure-purple)
