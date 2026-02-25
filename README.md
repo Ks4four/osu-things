@@ -193,9 +193,9 @@ Danbooru 到被拉取训练 ckpt 花费了很多年。但是 ppy 发布 User tag
 
 如果你也有兴趣做 ML 项目，以下的部分没什么大用，因为都是我的个人项目。为避免重复造轮子，你至少需要关注：
 
-- 谱面数据集（2007-10-06 -- 2025-12-31）：<https://huggingface.co/datasets/project-riz/osu-beatmaps>
-- User Tags 数据集（ppy 启动 tags 时 -- 至今）：<https://huggingface.co/datasets/project-riz/osu-beatmap-tags>
-- 预训练框架：<https://github.com/OliBomby/CM3P>
+- 谱面数据集（2007-10-06 -- 2025-12-31）：<https://huggingface.co/datasets/project-riz/osu-beatmaps>（最佳实践可能：数据集格式）
+- User Tags 数据集（ppy 启动 tags 时 -- 至今）：<https://huggingface.co/datasets/project-riz/osu-beatmap-tags>（最佳实践可能：数据集格式）
+- 预训练框架：<https://github.com/OliBomby/CM3P>（最佳实践可能：架构设计）
 - 生成框架：<https://github.com/OliBomby/Mapperatorinator>
 
 ## CM3P 模型
