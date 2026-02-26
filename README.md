@@ -266,8 +266,7 @@ Danbooru 到被拉取训练 ckpt 花费了很多年。但是 ppy 发布 User tag
 #### 所需工具
 
 - 下载 embeddings (https://huggingface.co/datasets/OliBomby/CM3P-Embeddings-244K)
-- osu! API v2 的 `GET /beatmapsets/{id}` 端点返回 `related_tags` 字段，即社区投票的 user tags
-- `resources/tags.json` 定义了 ~100 种官方 tag（`aim/jump`、`skillset/tech`、`style/clean` 等）
+- osu! API v2 的 `GET /beatmapsets/{id}` 端点返回 `related_tags` 字段，即社区投票的 user tags；可使用 <https://huggingface.co/datasets/project-riz/osu-beatmap-tags> 代替
 - 设计脚本：找出邻居、获取标签、计算分数；这三个要分开设计，因为这三个都有对应的参数（比如，邻居取 50 还是 100？标签是否要并发获取？分数的算法？）
 
 #### 聚类推理流程
